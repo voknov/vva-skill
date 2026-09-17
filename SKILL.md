@@ -18,7 +18,7 @@ description: 使用 VVA 把已有故事、大纲或剧本整理为角色、场�
 
 安装后用户可从 `/` 列表选择 VVA，或直接说“使用 VVA”。
 
-VVA 位于故事创作之后、视频生成之前。用户通常已经在 Codex、Claude Code、WorkBuddy、TRAE Work、千问办公 QwenWork、QoderWork、Qwen Code、Kimi Code、Kimi Work 或其他 Agent 中形成了故事构想、大纲或剧本；你使用 VVA 把这些内容整理成可生成的角色、场景、道具、声音、分集、片段和镜头，并同步到可视化创作台。VVA 只管理生成 AI 视频需要的信息，不扩展为通用写作或影视项目管理系统。
+VVA 位于故事创作之后、视频生成之前。用户通常已经在 Codex、Claude Code、WorkBuddy、TRAE Work、千问办公 QwenWork、QoderWork、Qwen Code、Kimi Code、Kimi Work、百度搭子或其他 Agent 中形成了故事构想、大纲或剧本；你使用 VVA 把这些内容整理成可生成的角色、场景、道具、声音、分集、片段和镜头，并同步到可视化创作台。VVA 只管理生成 AI 视频需要的信息，不扩展为通用写作或影视项目管理系统。
 
 如果当前对话中还没有可辨认的故事构想、大纲或剧本，先请用户提供、粘贴或在当前 Agent 中完成故事内容，再进入 VVA 视频制作流程；不要仅凭“帮我创建一个新故事”就在 VVA 中创建空泛作品。用户明确要求当前 Agent 协助补全大纲时可以协助，但在写入 VVA 前要让故事名称、核心人物、主要场景和情节走向达到足以拆解镜头的程度。已有故事内容就在当前上下文中时，不要求用户重复粘贴。
 
@@ -52,7 +52,7 @@ VVA 位于故事创作之后、视频生成之前。用户通常已经在 Codex�
 
 ## 连接与规范
 
-首次使用读取 [references/workflow.md](references/workflow.md)，其中包含同步约定和生成草稿说明。受支持的桌面 Agent 默认使用随包客户端；执行前先定位当前 Skill 根目录，不要假定任务工作目录就是 Skill 目录。macOS/Linux 优先使用 `sh scripts/vva.sh ...`，一般 Windows Agent 优先使用 `scripts\vva.cmd ...`，Kimi Code Windows 则使用 Git Bash 运行 `sh scripts/vva.sh ...`。只有当前 Agent 已经提供 VVA 云端工具时才直接调用它们。在 Codex 中可输入 `$vva`，在 Claude Code 和 Qwen Code 中可输入 `/vva`，在 Kimi Code 中可输入 `/skill:vva`；WorkBuddy、TRAE Work、千问办公 QwenWork、QoderWork 和 Kimi Work 可从 `/` 列表选择，所有 Agent 也都可直接说“使用 VVA”。`@` 在千问办公和 QoderWork 中用于添加上下文，不用于调用 Skill。
+首次使用读取 [references/workflow.md](references/workflow.md)，其中包含同步约定和生成草稿说明。受支持的桌面 Agent 默认使用随包客户端；执行前先定位当前 Skill 根目录，不要假定任务工作目录就是 Skill 目录。macOS/Linux 优先使用 `sh scripts/vva.sh ...`，一般 Windows Agent 优先使用 `scripts\vva.cmd ...`，Kimi Code Windows 则使用 Git Bash 运行 `sh scripts/vva.sh ...`。只有当前 Agent 已经提供 VVA 云端工具时才直接调用它们。在 Codex 中可输入 `$vva`，在 Claude Code 和 Qwen Code 中可输入 `/vva`，在 Kimi Code 中可输入 `/skill:vva`；WorkBuddy、TRAE Work、千问办公 QwenWork、QoderWork、Kimi Work 和百度搭子可从 `/` 列表选择，所有 Agent 也都可直接说“使用 VVA”。`@` 在千问办公和 QoderWork 中用于添加上下文，不用于调用 Skill。
 
 - 发布版默认连接 `https://video.pictech.top/api/v1`，对应网页为 `https://video.pictech.top`；直接运行客户端即可，不需要先设置地址。
 - `VVA_API_URL` 和 `VVA_WEB_URL` 仅用于本地开发或私有部署覆盖。API 地址必须指向 `/api/v1`；远程地址必须使用 HTTPS。会话与 API 地址绑定，更换地址后需要重新登录。
